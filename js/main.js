@@ -43,6 +43,8 @@ function handleTurn() {
     board[idx] = turn;
     turn = turn === 'X' ? 'O' : 'X';
     win = getWinner();
+    // Fonction qui envoi la variable win
+    ajouterPoint(win);
     render();
 };
 
@@ -60,7 +62,50 @@ function render() {
     //this moves the value of the board item into the squares[idx]
     squares[index].textContent = mark;
     });
-    messages.textContent = win === 'T' ? `That's a tie, queen!` : win ? `${win} wins the game!` : `It's ${turn}'s turn!`;
+    messages.textContent = win === 'T' ? `Égalité!` : win ? `${win} a gagné!` : `C'est au ${turn} de jouer!`;
     };
 
 init();
+
+// Mon code //
+// Variables pour suivre le nombre de victoires de X et O
+let XWins = 0;
+let OWins = 0;
+
+// Variable qui va chercher la div X et O dans le html
+let gagnerParX = document.getElementById("X");
+let gagnerParO = document.getElementById("O");
+
+// Obtenir l'élément HTML avec l'ID "image-de-moi"
+const MA_PHOTO = document.getElementById("image-de-moi");
+// Ajouter un événements de clic à l'élément, déclenchant la fonction emailMoi
+MA_PHOTO.addEventListener("click",emailMoi);
+
+
+// Retourner l'URL de la page et ensuite ouvrir un nouveau message sur mail à l'email ci-dessous
+function emailMoi(){
+    window.location.href = "mailto:2352901@etudiant.cegepvicto.ca";
+}
+
+
+
+// Fonction qui recoit le gagnant (X ou O) et qui ajoute les points selon lequelle a gagner
+function ajouterPoint(win){ 
+    // Si X gagne,
+    if(win == 'X'){
+        // Augmente le njombre de fois que X à gagné
+        XWins++;
+        // Crée un variable dans le storage local de la page et y ajoute la valeur de XWins
+        localStorage.setItem("XWins",XWins);
+        // Changer le texte a l'intérieur de la div pour afficher le nombre de fois que X à gagné
+        gagnerParX.innerHTML = "Gagner par X : " + XWins;
+    }
+    else if(win == "O"){    
+        // Augmente le njombre de fois que O à gagné
+        OWins++;
+        //Crée un variable dans le storage local de la page et y ajoute la valeur de OWins
+        localStorage.setItem("OWins",OWins);
+        // Changer le texte a l'intérieur de la div pour afficher le nombre de fois que O à gagné
+        gagnerParO.innerHTML = "Gagner par O : " + OWins;
+    }
+}

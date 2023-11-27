@@ -22,7 +22,6 @@ h2 {
 }
 
 .flex-column {
-    height: 100%;
     width: 100%;
     flex-direction: column;
     /* tells the container to drop down once it reaches max-width */
@@ -51,6 +50,6 @@ h2 {
     font-size: 20px;
     border: 1px solid black;
     height: 55px;
-    width: 100px;
+    width: 143px;
     margin: 10px;
 }

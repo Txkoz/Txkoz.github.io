@@ -1,0 +1,61 @@
+/* J'ai télécharger une police et j'ai lié le dossier qui la contient */
+@font-face {
+    font-family:"Anton";
+    src: url(/Text\ font/Anton-Regular.ttf);
+}
+/* Je vais en sorte que le html et body prennent 100% de la page */
+html, body{
+    height: 100%;
+    margin: auto;
+}
+/* Je positionne la div en bas de la page
+et je fait en sorte qu'il prenne tout le restant de la page */
+#bas-de-page{
+    position: absolute;
+    bottom: 0%;
+    width: 100%;
+
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    align-items: center;
+
+    height: 100px;
+    padding: 6px;
+
+    border: solid black;
+    border-radius: 25px;
+    background-color: lightgrey;
+}
+/* Je fais en sorte que tout les div dans le footer soit en flex */
+#gauche,#milieu, #droite{
+    display: flex;
+}
+/* Je place les éléments a gauche et je les positionne les un en dessous de l'autre */
+#gauche{
+    align-items: flex-start;
+    flex-direction: column;
+}
+/* J'aligne verticalement les éléments et je positionne les élément de la div nommé milieu un en dessous de l'autre */
+#milieu{
+    align-items: center;
+    flex-direction: column;
+}
+/* J'aligne verticalement les éléments et je les place a droite de la div nommé droite */
+#droite{
+    align-items: center;
+    justify-content: flex-end   ;
+    
+}
+/* Je décide de la grandeur et le border radius crée la bordure en forme de cercle */
+#image-de-moi{
+    width: 80px;
+    height: 80px;
+    border-radius: 50px;
+}
+/* Appliquer la police aux texte a l'intérieur du tableau 3x3 */
+.flex-container{
+    font-family: "Anton";
+}
+
+
+
