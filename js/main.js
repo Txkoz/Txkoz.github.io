@@ -82,14 +82,21 @@ const MA_PHOTO = document.getElementById("image-de-moi");
 MA_PHOTO.addEventListener("click",emailMoi);
 
 
-// Retourner l'URL de la page et ensuite ouvrir un nouveau message sur mail à l'email ci-dessous
+/**
+ * Retourner l'URL de la page et ensuite ouvrir un nouveau message sur mail à l'email ci-dessous :) 
+ */
 function emailMoi(){
     window.location.href = "mailto:2352901@etudiant.cegepvicto.ca";
 }
 
 
 
-// Fonction qui recoit le gagnant (X ou O) et qui ajoute les points selon lequelle a gagner
+
+
+/**
+ * // Fonction qui recoit le gagnant (X ou O) et qui ajoute les points selon lequelle a gagner
+ * @param {string} win le gagnant (X ou O)
+ */
 function ajouterPoint(win){ 
     // Si X gagne,
     if(win == 'X'){
